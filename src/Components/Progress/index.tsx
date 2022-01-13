@@ -13,7 +13,7 @@ const Progress: FC<{ steps: number; currentStep: number }> = ({ steps, currentSt
     }
     return progress;
   };
-  return <div id="progress-container">{getProgressBar()}</div>;
+  return <div className="progress-container">{getProgressBar()}</div>;
 };
 
 export default Progress;

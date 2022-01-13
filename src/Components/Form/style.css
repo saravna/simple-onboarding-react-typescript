@@ -24,3 +24,7 @@
 .subtitle {
   color: var(--light-gray2);
 }
+
+h2, h4 {
+  margin: 15px;
+}

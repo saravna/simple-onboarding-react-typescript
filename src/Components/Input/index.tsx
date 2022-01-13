@@ -2,28 +2,28 @@ import React, { FC } from "react";
 import "./style.css";
 
 const Input: FC<{
-  prefix?: string;
-  inputType?: string;
+  prefix?: string | null;
+  inputType?: string | null;
   label?: string;
   key: string;
   placeholder: string;
   optional?: boolean;
   onChange: (value: string) => void;
-}> = ({ prefix, inputType = "text", label, optional = false, onChange, ...rest }) => {
+}> = ({ prefix, inputType, label, optional = false, onChange, ...rest }) => {
   return (
     <div className="input-container">
       {!!label ? (
-        <label htmlFor="key" style={{ padding: "5px" }}>
+        <label htmlFor="key" className="input-label">
           {label} {optional ? <span className="optional-input">(optional)</span> : ""}
         </label>
       ) : null}
       {!!prefix ? (
-        <div className="input-with-prefix" style={{display: "flex", borderRadius: "5px"}}>
+        <div className="input-with-prefix">
           <p className="p-text">{prefix}</p>
-          <input type={inputType} onChange={(e) => onChange(e.target.value)} className="p-input" {...rest} />
+          <input type={inputType || "text"} onChange={(e) => onChange(e.target.value)} className="p-input" {...rest} />
         </div>
       ) : (
-        <input type={inputType} onChange={(e) => onChange(e.target.value)} className="input" {...rest} />
+        <input type={inputType || "text"} onChange={(e) => onChange(e.target.value)} className="input" {...rest} />
       )}
     </div>
   );

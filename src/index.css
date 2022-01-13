@@ -3,7 +3,8 @@
   /* --purple: #664de5; */
   --purple: #6f48f3;
   --light-gray1: rgba(0, 0, 0, 0.1);
-  --light-gray2: rgba(0, 0, 0, 0.4)
+  --light-gray2: rgba(0, 0, 0, 0.4);
+  --gray: rgba(0, 0, 0, 0.55);
 }
 
 body {

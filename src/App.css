@@ -11,8 +11,11 @@
 }
 
 .container {
-  width: 500px;
+  width: 35%;
+  min-width: 370px;
   padding: 20px;
   height: max-content;
   margin: auto;
 }
+
+

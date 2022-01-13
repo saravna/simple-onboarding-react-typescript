@@ -9,6 +9,8 @@
         "optional": false,
         "key": "fullName",
         "type": "input",
+        "inputType": "text",
+        "inputPrefix": null,
         "options": []
       },
       {
@@ -17,13 +19,17 @@
         "optional": false,
         "key": "displayName",
         "type": "input",
+        "inputType": "text",
+        "inputPrefix": null,
         "options": []
       }
     ],
     "action": {
       "key": "step1-action",
       "label": "Create Workspace"
-    }
+    },
+    "titleSubstitutes": {},
+    "subTitleSubstitutes": {}
   },
   "2": {
     "title": "Let's setup home for all you work",
@@ -35,6 +41,7 @@
         "optional": false,
         "key": "workspaceName",
         "type": "input",
+        "inputType": "text",
         "inputPrefix": null,
         "options": []
       },
@@ -44,6 +51,7 @@
         "optional": true,
         "key": "workspaceUrl",
         "type": "input",
+        "inputType": "text",
         "inputPrefix": "www.eden.com/",
         "options": []
       }
@@ -51,26 +59,34 @@
     "action": {
       "key": "step2-action",
       "label": "Create Workspace"
-    }
+    },
+    "titleSubstitutes": {},
+    "subTitleSubstitutes": {}
   },
   "3": {
     "title": "How are you planning to use Eden?",
     "subTitle": "We'll streamline your setup experience accordingly",
     "fields": [
       {
+        "label": null,
         "key": "workspaceType",
         "type": "cardSelect",
         "optional": false,
+        "inputType": null,
+        "inputPrefix": null,
+        "placeholder": null,
         "options": [
           {
             "title": "For myself",
             "description": "Write better. Think more clearly. Stay organized",
-            "value": "myself"
+            "value": "myself",
+            "key": "workspace-for-myself"
           },
           {
             "title": "With my team",
             "description": "Wiki, docs, tasks and projects, all in one place",
-            "value": "team"
+            "value": "team",
+            "key": "workspace-for-team"
           }
         ]
       }
@@ -78,7 +94,9 @@
     "action": {
       "key": "step3-action",
       "label": "Create Workspace"
-    }
+    },
+    "titleSubstitutes": {},
+    "subTitleSubstitutes": {}
   },
   "4": {
     "title": "Congratulations, <<displayName>>!",
@@ -91,6 +109,7 @@
     "fields": [],
     "titleSubstitutes": {
       "displayName": "1"
-    }
+    },
+    "subTitleSubstitutes": {}
   }
 }

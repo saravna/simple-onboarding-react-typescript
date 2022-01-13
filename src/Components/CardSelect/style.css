@@ -5,12 +5,17 @@
 }
 
 .card-option {
-  width: 30%;
+  width: 33%;
   min-width: 100px;
   border: 1px solid var(--light-gray1);
   padding: 15px;
   margin: 10px;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.card-option:hover {
+  border: 1px solid var(--purple);
 }
 
 .card-option.active {
@@ -30,4 +35,5 @@
 
 .card-description {
   color: var(--light-gray2);
+  font-size: 14px;
 }

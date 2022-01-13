@@ -1,8 +1,9 @@
 import React, { FC } from "react";
+import { CardSelectOption } from "../../types";
 import CardOption from "./CardOption";
 import "./style.css";
 
-const CardSelect: FC<{ options: any[]; value: string; onChange: (value: string) => void }> = ({
+const CardSelect: FC<{ options: CardSelectOption[]; value: string; onChange: (value: string) => void }> = ({
   options,
   value,
   onChange,

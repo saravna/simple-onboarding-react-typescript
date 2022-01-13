@@ -1,7 +1,12 @@
 import React, { FC } from "react";
+import { CardSelectOption } from "../../types";
 import "./style.css";
 
-const CardOption: FC<{ option: any; onClick: () => void; active: boolean }> = ({ option, active, onClick }) => {
+const CardOption: FC<{ option: CardSelectOption; onClick: () => void; active: boolean }> = ({
+  option,
+  active,
+  onClick,
+}) => {
   return (
     <div onClick={onClick} key={option.key} className={`card-option${active ? " active" : ""}`}>
       <div className={`icon-placeholder${active ? " active" : ""}`} />

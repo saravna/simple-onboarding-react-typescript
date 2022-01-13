@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { FormValueType } from "../../types";
 import CardSelect from "../CardSelect";
 import Input from "../Input";
 import "./style.css";
@@ -30,7 +31,7 @@ const getUpdatedString = (string: string, substitutes: { [key: string]: string }
 const Form: FC<{
   currentForm: string;
   formData: any;
-  formContent: any;
+  formContent: FormValueType;
   handleActionClick: () => void;
   handleChange: (key: string, value: string) => void;
 }> = ({ currentForm, formData, formContent, handleActionClick, handleChange }) => {
@@ -40,43 +41,32 @@ const Form: FC<{
     <div className="form-container">
       <h2>{title}</h2>
       <h4 className="subtitle">{subTitle}</h4>
-      {formContent.fields.map(
-        (field: {
-          type: string;
-          key: string;
-          placeholder: string;
-          inputType: string | undefined;
-          label: string | undefined;
-          optional: boolean | undefined;
-          options: any[];
-          inputPrefix: string | undefined;
-        }) => {
-          if (field.type === "input")
-            return (
-              <Input
-                prefix={field.inputPrefix}
-                key={field.key}
-                placeholder={field.placeholder}
-                inputType={field.inputType}
-                label={field.label}
-                optional={field.optional}
-                onChange={(value: string) => handleChange(field.key, value)}
-              />
-            );
-          else if (field.type === "cardSelect") {
-            console.log(field.key);
-            return (
-              <CardSelect
-                onChange={(value: string) => handleChange(field.key, value)}
-                value={formData[currentForm]?.[field.key]}
-                key={field.key}
-                options={field.options}
-              />
-            );
-          }
-          return <></>
+      {formContent.fields.map((field) => {
+        if (field.type === "input")
+          return (
+            <Input
+              prefix={field.inputPrefix}
+              key={field.key}
+              placeholder={field.placeholder || ""}
+              inputType={field.inputType}
+              label={field.label || ""}
+              optional={field.optional}
+              onChange={(value: string) => handleChange(field.key, value)}
+            />
+          );
+        else if (field.type === "cardSelect") {
+          console.log(field.key);
+          return (
+            <CardSelect
+              onChange={(value: string) => handleChange(field.key, value)}
+              value={formData[currentForm]?.[field.key]}
+              key={field.key}
+              options={field.options}
+            />
+          );
         }
-      )}
+        return <></>;
+      })}
       <button className="button" onClick={handleActionClick}>
         {formContent.action.label}
       </button>
