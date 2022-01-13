@@ -39,7 +39,7 @@ const Form: FC<{
   return (
     <div className="form-container">
       <h2>{title}</h2>
-      <h4>{subTitle}</h4>
+      <h4 className="subtitle">{subTitle}</h4>
       {formContent.fields.map(
         (field: {
           type: string;
@@ -74,6 +74,7 @@ const Form: FC<{
               />
             );
           }
+          return <></>
         }
       )}
       <button className="button" onClick={handleActionClick}>
