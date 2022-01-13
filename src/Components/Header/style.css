@@ -1,0 +1,14 @@
+.app-header {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: black;
+}
+
+#logo {
+  height: 40px;
+  width: 40px;
+}

@@ -1,0 +1,33 @@
+.card-select {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card-option {
+  width: 30%;
+  min-width: 100px;
+  border: 1px solid var(--light-gray1);
+  padding: 15px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.card-option.active {
+  border: 1px solid var(--purple);
+}
+
+.icon-placeholder {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.icon-placeholder.active {
+  background-color: var(--purple);
+}
+
+.card-description {
+  color: var(--light-gray2);
+}
