@@ -55,7 +55,6 @@ const Form: FC<{
             />
           );
         else if (field.type === "cardSelect") {
-          console.log(field.key);
           return (
             <CardSelect
               onChange={(value: string) => handleChange(field.key, value)}
